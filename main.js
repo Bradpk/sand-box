@@ -103,16 +103,16 @@ function generateRandomScale() {
 
         switch (randomScale) {
             case 0:
-                case 0:
-                    synth.triggerAttackRelease("C4", "4n", now);
-                    synth.triggerAttackRelease("D4", "4n", now + 0.5);
-                    synth.triggerAttackRelease("E4", "4n", now + 1);
-                    synth.triggerAttackRelease("F4", "4n", now + 1.5);
-                    synth.triggerAttackRelease("G4", "4n", now + 2);
-                    synth.triggerAttackRelease("A4", "4n", now + 2.5);
-                    synth.triggerAttackRelease("B4", "4n", now + 3);
-                    synth.triggerAttackRelease("C", "4n", now + 3.5);
-                    break;
+            case 0:
+                synth.triggerAttackRelease("C4", "4n", now);
+                synth.triggerAttackRelease("D4", "4n", now + 0.5);
+                synth.triggerAttackRelease("E4", "4n", now + 1);
+                synth.triggerAttackRelease("F4", "4n", now + 1.5);
+                synth.triggerAttackRelease("G4", "4n", now + 2);
+                synth.triggerAttackRelease("A4", "4n", now + 2.5);
+                synth.triggerAttackRelease("B4", "4n", now + 3);
+                synth.triggerAttackRelease("C5", "4n", now + 3.5);
+                break;
             case 1:
                 synth.triggerAttackRelease("C4", "4n", now);
                 synth.triggerAttackRelease("D4", "4n", now + 0.5);
