@@ -1,33 +1,8 @@
+// import * as Tone from 'tone'
 
-const liveButton = document.getElementById('buttonTrigger');
+
+
 const magicbutton = document.getElementById("magicButton");
-
-
-function updateCurrentTime() {
-    const now = new Date();
-
-    const timeText = now.toLocaleTimeString();
-    currentClockTime.innerText = timeText;
-
-    const dateText = now.toDateString()
-    currentDateTime.innerText = dateText;
-}
-
-
-function checkAlarm() {
-    const now = new Date();
-    const alarmTrack = new Date(now.toDateString() + ' ' + setAlarm.value);
-    if (now >= alarmTrack) {
-        alert('Wake Up!');
-    }
-}
-
-
-
-
-
-setInterval(updateCurrentTime, 1000);
-
 
 
 magicbutton.addEventListener("click", async () => {
@@ -50,3 +25,4 @@ magicbutton.addEventListener("click", async () => {
     synth.triggerAttackRelease("B3", "16n", now + 4.5)
     synth.triggerAttackRelease("C4", "16n", now + 4.8)
 })
+
