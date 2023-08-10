@@ -47,6 +47,20 @@ function generateIntervalButtons() {
         intervalButtonsContainer.appendChild(button);
     }
 }
+//--------------------------------------------------------------------------------------
+function generateScaleButtons() {
+    const intervalLabels = [
+        "Ionian", "Dorian", "Phyrgian", "Lydian",
+        "Mixoloydian", "Aolian", "Locrian"
+    ];
+
+    for (let i = 0; i <= 6; i++) {
+        const button = document.createElement('button');
+        button.textContent = intervalLabels[i];
+        button.classList.add('number-button'); 
+        scaleButtonsContainer.appendChild(button);
+    }
+}
 
 
 //---------------------------------------------------------------------------------------------------------------------------
@@ -237,6 +251,7 @@ function generateRandomScale() {
 }
 //---------------------------------------------------------------------------------------------------------------------------
 generateIntervalButtons();
+generateScaleButtons();
 bindNumberButtonEvents();
 generateIntervalButton.addEventListener('click', generateRandomInterval);
 generateScaleButton.addEventListener('click', generateRandomScale);
