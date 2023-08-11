@@ -7,13 +7,30 @@ const scaleButtonsContainer = document.getElementById('scaleButtons');
 
 //---------------------------------------------------------------------------------------------------------------------------
 function bindNumberButtonEvents() {
-    const numberButtons = document.querySelectorAll('.number-button');
+    const intervalButtons = document.querySelectorAll('#intervalButtons .number-button');
+    const scaleButtons = document.querySelectorAll('#scaleButtons .number-button');
 
-    numberButtons.forEach((button, index) => {
+    intervalButtons.forEach((button, index) => {
         button.addEventListener('click', () => {
             const resultInterval = parseInt(document.getElementById('resultInterval').textContent);
-            
+
             if (!isNaN(resultInterval) && index === resultInterval) {
+                button.classList.add('correct');
+            } else {
+                button.classList.add('incorrect');
+            }
+
+            setTimeout(() => {
+                button.classList.remove('correct', 'incorrect');
+            }, 400);
+        });
+    });
+
+    scaleButtons.forEach((button, index) => {
+        button.addEventListener('click', () => {
+            const resultScale = parseInt(document.getElementById('resultScale').textContent);
+
+            if (!isNaN(resultScale) && index === resultScale) {
                 button.classList.add('correct');
             } else {
                 button.classList.add('incorrect');
