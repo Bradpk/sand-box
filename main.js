@@ -12,26 +12,19 @@ function bindNumberButtonEvents() {
     numberButtons.forEach((button, index) => {
         button.addEventListener('click', () => {
             const resultInterval = parseInt(document.getElementById('resultInterval').textContent);
-            const resultScale = parseInt(document.getElementById('resultScale').textContent);
-
+            
             if (!isNaN(resultInterval) && index === resultInterval) {
-               
-                button.classList.add('correct');
-            } else if (!isNaN(resultScale) && index === resultScale) {
-               
                 button.classList.add('correct');
             } else {
-         
                 button.classList.add('incorrect');
             }
 
             setTimeout(() => {
                 button.classList.remove('correct', 'incorrect');
-            }, 1000);
+            }, 400);
         });
     });
 }
-
 //---------------------------------------------------------------------------------------------------------------------------
 function generateIntervalButtons() {
     const intervalLabels = [
@@ -49,14 +42,14 @@ function generateIntervalButtons() {
 }
 //--------------------------------------------------------------------------------------
 function generateScaleButtons() {
-    const intervalLabels = [
+    const scaleLabels = [
         "Ionian", "Dorian", "Phyrgian", "Lydian",
         "Mixoloydian", "Aolian", "Locrian"
     ];
 
     for (let i = 0; i <= 6; i++) {
         const button = document.createElement('button');
-        button.textContent = intervalLabels[i];
+        button.textContent = scaleLabels[i];
         button.classList.add('number-button'); 
         scaleButtonsContainer.appendChild(button);
     }
@@ -171,7 +164,6 @@ function generateRandomScale() {
         const now = Tone.now();
 
         switch (randomScale) {
-            case 0:
             case 0:
                 synth.triggerAttackRelease("C4", "4n", now);
                 synth.triggerAttackRelease("D4", "4n", now + 0.5);
